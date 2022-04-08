@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { get } from 'http';
 import { Material } from 'src/Mongo/Interfaces/material.interface';
 import { MaterialsService } from 'src/Services/materials/materials.service';
@@ -12,8 +12,13 @@ export class MaterialsController {
     ){}
 
    @Get()
-   getAllMaterials(): string{
-       return 'Todos os Materiais estão aqui!';
+   async getAllMaterials(): Promise<Material[]>{
+       return await this.materialService.getAllMaterials();
+   }
+
+   @Get(':name/:materialName')
+   async getMaterialByName(@Param('materialName') materialName: string): Promise<Material[]>{
+       return await this.materialService.getMaterialByName(materialName);
    }
 
    @Post()

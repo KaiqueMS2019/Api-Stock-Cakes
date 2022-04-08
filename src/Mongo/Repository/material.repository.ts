@@ -16,4 +16,17 @@ export class MaterialRepository {
         return await savedMaterial.save()
     }
 
+    async getAllMaterials(): Promise<Material[]>{
+        return await this.materialModel.find({}, {__v : false}).sort({ name : +1}).exec();
+    }
+
+    async getMaterialByName(materialName: string): Promise<Material[]>{
+
+        return await this.materialModel.find({
+            name: { '$regex' : materialName, '$options' : 'i'}
+        }, {__v : false }
+        )
+
+    }
+
 }
