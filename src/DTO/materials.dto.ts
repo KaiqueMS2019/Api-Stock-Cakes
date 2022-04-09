@@ -1,6 +1,5 @@
 import { IsNotEmpty, IsString, IsNumber, IsPositive, MinLength, MaxLength, ValidateNested} from 'class-validator';
-import { Type } from 'class-transformer';
-import { UserDTO } from './user.dto'
+
 
 export class MaterialDTO {
 
@@ -16,6 +15,5 @@ export class MaterialDTO {
     readonly quantity: number;
 
     @IsNotEmpty()
-    // @Type(() => UserDTO)
     readonly user: string;
 }

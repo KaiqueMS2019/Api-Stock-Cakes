@@ -29,4 +29,13 @@ export class MaterialRepository {
 
     }
 
+    async getUserbyName(userName: string): Promise<Material[]>{
+
+        return await this.materialModel.find({
+            user: { '$regex' : userName, '$options' : 'i'}
+        }, {__v : false }
+        )
+
+    }
+
 }

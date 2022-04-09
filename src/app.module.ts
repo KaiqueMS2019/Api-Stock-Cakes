@@ -9,7 +9,7 @@ import { MaterialSchema } from './Mongo/Schemas/material.schema';
 @Module({
   imports: [ 
 
-    MongooseModule.forRoot('mongodb://localhost/stock', { useNewUrlParser : true, useUnifiedTopology: true}),
+    MongooseModule.forRoot('mongodb://localhost/stock'),
 
     MongooseModule.forFeature([
       { name : 'material', schema : MaterialSchema }

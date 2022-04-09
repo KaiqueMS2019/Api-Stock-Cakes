@@ -32,4 +32,15 @@ export class MaterialsService {
         
         return foundMaterials;
     }
+
+    async getUserbyName(userName: string): Promise<Material[]>{
+
+        const foundMaterials = await this.materialRepository.getUserbyName(userName);
+
+        if(!foundMaterials.length)
+            throw new BadRequestException('Esse usuario não existe')
+        
+        return foundMaterials;
+    }
+
 }
