@@ -16,6 +16,10 @@ export class MaterialRepository {
         return await savedMaterial.save()
     }
 
+    async getMaterialById(materialID: string): Promise<Material>{
+        return await this.materialModel.findById(materialID, {__v: false});
+    }
+
     async getAllMaterials(): Promise<Material[]>{
         return await this.materialModel.find({}, {__v : false}).sort({ name : +1}).exec();
     }
@@ -36,6 +40,10 @@ export class MaterialRepository {
         }, {__v : false }
         )
 
+    }
+    
+    async updateMaterialById(materialID: string, newMaterial: MaterialDTO): Promise<Material>{
+        return await this.materialModel.replaceOne({_id: materialID }, newMaterial);
     }
 
 }

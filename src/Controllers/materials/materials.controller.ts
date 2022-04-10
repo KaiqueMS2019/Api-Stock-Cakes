@@ -20,7 +20,12 @@ export class MaterialsController {
        return await this.materialService.getAllMaterials();
    }
 
-   @Get(':user/:userName')
+   @Get(':id/:materialID')
+   async getMaterialById(@Param('materialID') materialID: string): Promise<Material>{
+        return await this.materialService.getMaterialById(materialID);
+   }
+
+   @Get(':raw/user/:userName')
    async getUserbyName(@Param('userName') userName: string): Promise<Material[]>{
         return await this.materialService.getUserbyName(userName);
    }
@@ -30,10 +35,10 @@ export class MaterialsController {
        return await this.materialService.getMaterialByName(materialName);
    }
 
-   @Patch('materialID')
-   updateMaterial(): string{
-       return "Esse material foi atualizado";
-   }
+   @Patch(':materialID')
+  async updateMaterial(@Param('materialID') materialID: string, @Body() newMaterial: MaterialDTO): Promise<Material>{
+      return await this.materialService.updateMaterialById(materialID, newMaterial);
+  }
 
    @Delete()
    deleteMaterial(): string{
