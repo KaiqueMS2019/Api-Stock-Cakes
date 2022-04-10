@@ -1,73 +1,59 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<h1 align="center">
+    API-LIBRARY
+</h1>
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+  A **API-Stock-Cakes** é uma API-REST criada com NODE.js e NEST.JS e Typescript. A API se trata de um CRUD, para uma loja de bolos, permitindo o cadastro de um materia com a sua respectiva quantidade e qual usuario fez, como, nome: farinha, quantidade: 1, usuario: Ciclano. Possibilitanto tambem para um maior controle, pesquisar um material pelo ID ou nome, pesquisar o usuario e alterar a quantidade que foi usada pelo ID do material.
 
-## Installation
+  ---
+
+  ## 🚀Tecnologias Utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- [Nodejs](https://nodejs.org)
+- [Nestjs](https://docs.nestjs.com/)
+- [Mongodb](https://www.mongodb.com/)
+- [Mongose](https://www.npmjs.com/package/mongoose)
+- [Typescript](https://www.typescriptlang.org/docs/handbook/release-notes/overview.html)
+- [Robo 3T](https://robomongo.org/download)
+- [Class-Validator](https://www.npmjs.com/package/class-validator)
+  
+---
+
+## 📁 Como baixar o projeto
+```bash
+
+$ git clone https://github.com/KaiqueMS2019/Api-Library.git
+
+$ cd stock-cakes
+```
+
+## Instalação
 
 ```bash
 $ npm install
+# ou
+$ yarn add
 ```
 
-## Running the app
+## Rodar o programa
 
 ```bash
-# development
+# 1°
 $ npm run start
+#ou
+$ yarn run start
 
-# watch mode
+# 2° 
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
+#ou
+$ yarn run start:dev
 ```
+## Conectando ao banco de dados
 
-## Test
+  É necessario que instale o banco de dados MongoDB. Nessa aplicação foi usada a interface Robo 3T,crie uma coneção nele, mude a rota de conexão no app.module para o sistema encontrar o banco e se comunicar. E no primmeiro acesso ele cria o banco caso não exista.
+  
+---
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).

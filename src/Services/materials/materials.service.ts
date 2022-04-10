@@ -65,8 +65,12 @@ export class MaterialsService {
         if(!existMaterial)
             throw new BadRequestException('Resultado não encontrado');
 
-        return await  this.materialRepository.updateMaterialById(materialID, newMaterial);
+      const updateMaterial = await  this.materialRepository.updateMaterialById(materialID, newMaterial);
 
+        if(updateMaterial)
+            return await this.materialRepository.getMaterialById(materialID)
+        else
+            throw new BadRequestException('Erro na atualização dos dados')
     }
 
 }

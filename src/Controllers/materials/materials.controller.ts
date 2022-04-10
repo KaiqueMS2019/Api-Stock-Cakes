@@ -39,10 +39,5 @@ export class MaterialsController {
   async updateMaterial(@Param('materialID') materialID: string, @Body() newMaterial: MaterialDTO): Promise<Material>{
       return await this.materialService.updateMaterialById(materialID, newMaterial);
   }
-
-   @Delete()
-   deleteMaterial(): string{
-       return "Deletado";
-   }
     
 }
